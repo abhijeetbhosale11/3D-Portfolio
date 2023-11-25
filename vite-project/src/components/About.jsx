@@ -1,23 +1,25 @@
+// About.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import Resume from "./Resume";
 
 const ServiceCard = ({ title, icon }) => (
   <div className='flex justify-center items-center h-full'>
-  <motion.div
-    variants={fadeIn("right", "spring", 0.5, 0.75)}
-    className='w-[200px] mx-2 green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-  >
-    <div className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
-      <img src={icon} alt='web-development' className='w-16 h-16 object-contain' />
-      <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
-    </div>
-  </motion.div>
-</div>
-
+    <motion.div
+      variants={fadeIn("right", "spring", 0.5, 0.75)}
+      className='w-[200px] mx-2 green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+    >
+      <div className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
+        <img src={icon} alt='web-development' className='w-16 h-16 object-contain' />
+        <h3 className='text-white text-[20px] font-bold text-center'>{title}</h3>
+      </div>
+    </motion.div>
+  </div>
 );
 
 const About = () => {
@@ -34,6 +36,11 @@ const About = () => {
       >
         I'm a skilled software developer with experience in Java, Springboot, C#, JavaScript And SQL and Work in frameworks like React, BootStrap, Spring, ASP.NET Core, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
+
+      {/* Direct link to the resume PDF */}
+      <div className='mt-4'>
+        <Resume />
+      </div>
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
